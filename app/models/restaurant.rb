@@ -3,5 +3,5 @@ class Restaurant < ActiveRecord::Base
 
   validates :name, presence: true
   validates :address, presence: true
-  validates :category, inclusion: { in: %w(chinese italian japanese french belgian), allow_nil: false}
+  validates :category, inclusion: { in: %w(chinese italian japanese french belgian), allow_nil: false }
 end
