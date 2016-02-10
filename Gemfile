@@ -53,4 +53,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'rspec-rails', group: [ :test ]
+
+ruby "2.3.0"
