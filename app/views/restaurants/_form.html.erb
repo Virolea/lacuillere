@@ -1,10 +1,16 @@
-<div class=form-container>
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :name, required: false, placeholder: "Restaurant Name" %>
-  <%= f.input :address, required: false, placeholder: "Address" %>
-  <%= f.input :phone_number, placeholder: "Phone Number" %>
-  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Please select a category" %>
-  <%= f.submit class: "btn btn-success" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class=form-container>
+        <%= simple_form_for(@restaurant) do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :name, required: false, placeholder: "Restaurant Name" %>
+          <%= f.input :address, required: false, placeholder: "Address" %>
+          <%= f.input :phone_number, placeholder: "Phone Number" %>
+          <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Please select a category" %>
+          <%= f.submit class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

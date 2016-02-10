@@ -7,7 +7,7 @@
   <h4>Reviews: </h4>
   <ul>
     <% @restaurant.reviews.each do |review| %>
-    <p><%= review.content %>, note: <%= review.rating%></p>
+    <p><%= review.content %>, <%= ('<i class="fa fa-star"></i>' * review.rating).html_safe %></p>
     <% end %>
     <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-success" %>
   </ul>
@@ -15,10 +15,16 @@
 
 <script>
       function initMap() {
+        var myLatLng = {lat: 48.865, lng: 2.3798};
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
-          center: {lat: 44.540, lng: -78.546},
-          zoom: 8
+          center: myLatLng,
+          zoom: 15
+        });
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Awesome Coding Camp with Edouard Foussier!'
         });
       }
 </script>
