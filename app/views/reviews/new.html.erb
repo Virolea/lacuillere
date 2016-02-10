@@ -1,5 +1,7 @@
-<%= form_for [@restaurant, @review] do |f| %>
-<%= f.text_field :content , placeholder: "review of the restaurant"%>
-<%= f.number_field :rating, placeholder: "Rating" %>
-<%= f.submit %>
+<div class=form-container>
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+<%= f.input :content, required: false, placeholder: "review of the restaurant"%>
+<%= f.input :rating, placeholder: "Rating" %>
+<%= f.submit class: "btn btn-success" %>
 <% end %>
+</div>

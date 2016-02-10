@@ -1,8 +1,25 @@
-<h1><%= @restaurant.name %></h1>
-<h3><%= @restaurant.address %></h3>
-<h4>Reviews: </h4>
-<ul>
-  <% @restaurant.reviews.each do |review| %>
-  <p><%= review.content %>, note: <%= review.rating%></p>
-  <% end %>
-</ul>
+<div id="map"></div>
+<div class="container">
+  <h1></i><%= @restaurant.name %></h1>
+  <h3><i class="fa fa-map-marker"></i> <%= @restaurant.address %></h3>
+  <p><i class="fa fa-phone"></i> <%= @restaurant.phone_number %></p>
+  <p><i class="fa fa-cutlery"></i> <%= @restaurant.category %> cuisine</p>
+  <h4>Reviews: </h4>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+    <p><%= review.content %>, note: <%= review.rating%></p>
+    <% end %>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-success" %>
+  </ul>
+</div>
+
+<script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 44.540, lng: -78.546},
+          zoom: 8
+        });
+      }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>

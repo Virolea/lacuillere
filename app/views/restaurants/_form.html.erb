@@ -1,7 +1,10 @@
-<%= form_for @restaurant do |f| %>
-  <%= f.text_field :name, placeholder: "Restaurant Name" %>
-  <%= f.text_field :address, placeholder: "Address" %>
-  <%= f.text_field :phone_number, placeholder: "Phone Number" %>
-  <%= f.select :category, Restaurant::CATEGORIES %>
-  <%= f.submit %>
+<div class=form-container>
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, required: false, placeholder: "Restaurant Name" %>
+  <%= f.input :address, required: false, placeholder: "Address" %>
+  <%= f.input :phone_number, placeholder: "Phone Number" %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Please select a category" %>
+  <%= f.submit class: "btn btn-success" %>
 <% end %>
+</div>

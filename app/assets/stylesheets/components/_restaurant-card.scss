@@ -1,0 +1,16 @@
+.restaurant-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.restaurant-infos {
+  flex: 1 0 auto;
+}
+.restaurant-link {
+  flex: 0 0 20%;
+}
